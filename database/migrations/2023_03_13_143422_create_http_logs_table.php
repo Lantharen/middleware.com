@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('method', 8);
             $table->string('path', 2000);
             $table->string('ip', 45);
-            $table->json('data');
+            $table->json('data')->nullable();
             $table->text('user_agent');
             $table->timestamp('created_at')->useCurrent();
         });

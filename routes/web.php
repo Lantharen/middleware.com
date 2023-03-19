@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Middleware\HttpLogMiddleware;
+use App\Http\Controllers\HttpLogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,17 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 Route::get('/about', function () {
     return view('welcome');
 });
 Route::get('/page', function () {
     return view('welcome');
 });
-Route::get('/form', function () {
-    return view('HttpLogForm');
-});
+Route::get('/form', [HttpLogController::class, 'form'])->name('form.view');
+Route::post('/handle', [HttpLogController::class, 'handle'])->name('form.handle');
+
+
 
 

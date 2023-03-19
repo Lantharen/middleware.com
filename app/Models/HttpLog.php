@@ -19,6 +19,6 @@ class HttpLog extends Model
         'user_agent'
     ];
     protected $casts = [
-        'data' => 'array',
-    ];
+      'data' => 'array',
+   ];
 }

@@ -21,7 +21,7 @@ class HttpLogMiddleware
             'method' => $request->method(),
             'path' => $request->path(),
             'ip' => $request->ip(),
-            'data' =>$request->all(),
+            'data' =>$request->all() ? : null,
             'user_agent' => $request->userAgent(),
         ]);
         //dd($httpLog);
